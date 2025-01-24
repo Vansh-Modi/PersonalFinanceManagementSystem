@@ -73,7 +73,7 @@
 <body>
     <header><h1>Personal Finance Management System</h1></header>
     <nav>
-        <a href="#">Dashboard</a>
+        <a href="Dashboard.aspx">Dashboard</a>
         <a href="#">Add Income</a>
         <a href="#">Add Expences</a>
         <a href="#">Set Goal</a>
