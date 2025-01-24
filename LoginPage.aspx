@@ -43,22 +43,18 @@
         <div class="auto-style1">
 
             <strong>Login</strong><br />
-            <br />
-            <br />
-
+            <br/>
+            <br/>
             Username :
             <asp:TextBox ID="txtUname" runat="server"></asp:TextBox>
-            <br />
-            <br />
+            <br/>
+            <br/>
             Password :
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-
-            <br />
-            <br />
-            <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
-&nbsp;
+            <br/>
+            <br/>
+            <asp:Button ID="btnlogin" runat="server" Text="Login" />
             <asp:Button ID="btnReset" runat="server" Text="Reset" />
-
         </div>
     </form>
 </body>
