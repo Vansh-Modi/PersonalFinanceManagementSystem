@@ -53,8 +53,6 @@
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
             <br/>
             <br/>
-            <asp:Button ID="btnlogin" runat="server" Text="Login" />
-            <asp:Button ID="btnReset" runat="server" Text="Reset" />
         </div>
     </form>
 </body>

@@ -19,9 +19,6 @@ namespace PerosnalFinanceManagementSystem
         protected void FnConnection()
         {
             string cs = ConfigurationManager.ConnectionStrings["db_login"].ConnectionString;
-
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
   
