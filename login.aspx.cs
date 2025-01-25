@@ -59,5 +59,10 @@ namespace PersonalFinanceManagementSystem
                 }
             }
         }
+
+        protected void lblregister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registrationpage.aspx");
+        }
     }
 }

@@ -24,13 +24,13 @@ namespace PersonalFinanceManagementSystem
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// txtUname control.
+        /// txtusern control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUname;
+        protected global::System.Web.UI.WebControls.TextBox txtusern;
 
         /// <summary>
         /// txtEmail control.
@@ -51,13 +51,13 @@ namespace PersonalFinanceManagementSystem
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
-        /// txtConfirmpass control.
+        /// txtphone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmpass;
+        protected global::System.Web.UI.WebControls.TextBox txtphone;
 
         /// <summary>
         /// btnRegister control.
