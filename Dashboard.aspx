@@ -74,24 +74,24 @@
     <header><h1>Personal Finance Management System</h1></header>
     <nav>
         <a href="Dashboard.aspx">Dashboard</a>
-        <a href="#">Add Income</a>
-        <a href="#">Add Expences</a>
-        <a href="#">Set Goal</a>
-        <a href="#">Report</a>
+        <a href="Transaction.aspx">Transaction</a>
+        <a href="Notification.aspx">Set Notification</a>
+        <a href="Report.aspx">Report</a>
+        <a href="Account.aspx">Account</a>
     </nav>
     <div class="container">
         <h2>Dashboard</h2>
         <div class="card">
            <h3>Total Income</h3>
-           <p>50,000 Rs.</p>
+           <p id="paraDisplayIncome" runat="server"></p>
         </div>
         <div class="card">
            <h3>Total Expenses</h3>
-           <p>20,000 Rs.</p>
+           <p id="paraDisplayExpense" runat="server"></p>
         </div>
         <div class="card">
            <h3>Remaining Budget</h3>
-           <p>30,000 Rs.</p>
+           <p id="paraDisplayBudget" runat="server"></p>
         </div> 
     </div>
     <footer>

@@ -39,7 +39,7 @@ namespace PersonalFinanceManagementSystem
                     }
                     else
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Login Failed!')</script>");
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Login Failed! Invalid Login Name or Password')</script>");
                     }
                 }
                 catch (SqlException sqlEx)
