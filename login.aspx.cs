@@ -22,7 +22,7 @@ namespace PersonalFinanceManagementSystem
         {
             using (SqlConnection con = new SqlConnection(cs))
             {
-                string query = "SELECT * FROM tblCustomer WHERE custName = @user AND password = @pass";
+                string query = "SELECT * FROM login WHERE custId = @user AND password = @pass";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@user", txtusername.Text);
                 cmd.Parameters.AddWithValue("@pass", txtpass.Text);
@@ -62,7 +62,7 @@ namespace PersonalFinanceManagementSystem
 
         protected void lblregister_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Registrationpage.aspx");
+            Response.Redirect("RegistrationPage.aspx");
         }
     }
 }

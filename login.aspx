@@ -77,7 +77,7 @@
                     <td class="auto-style4" colspan="2">
                         <asp:Button ID="btnlogin" runat="server" OnClick="btnlogin_Click" Text="Login" />
                         <br />
-                        <span style="color: rgb(28, 45, 56); font-family: &quot;Euclid Circular A&quot;; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Don&#39;t have an account?<asp:LinkButton ID="lblregister" runat="server" OnClick="lblregister_Click">Register</asp:LinkButton>
+                        <span style="color: rgb(28, 45, 56); font-family:Euclid Circular A ; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Don&#39;t have an account?<asp:LinkButton ID="lblregister" runat="server" OnClick="lblregister_Click">Register</asp:LinkButton>
                         </span>
                     </td>
                 </tr>
