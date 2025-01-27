@@ -6,45 +6,64 @@
 <head runat="server">
     <title></title>
     <style>
-       body {
-           font-family: Arial, sans-serif;
-           margin: 0;
-           padding: 0;
-           background-color: #f4f4f9;
-       }
-       header {
-           background-color: #4CAF50;
-           color: white;
-           text-align: center;
-           padding: 10px;
-       }
-       h2 {
-           text-align: center;
-           color: #4CAF50;
-       }
-        
-        .auto-style2 {
-            width: 473px;
+     body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-top: 20px;
+}
+
+table {
+    margin: 0 auto;
+    border-spacing: 10px;
+    margin-top: 30px;
+    margin-left:10px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.auto-style2 {
+    width: 473px;
+}
+
+.auto-style5 {
+    height: 29px;
+}
+
+
+        .auto-style6 {
+            height: 201px;
+            margin-left: 130px;
         }
-        .auto-style3 {
-            text-align: center;
-        }
-        td{
-            text-align:center;
-        }
-        footer{
-            background: #333;
-            color: white;
-            text-align: center;
-            margin-top : 320px;
-        }
-        .auto-style4 {
-            width: 473px;
-            height: 29px;
-        }
-        .auto-style5 {
-            height: 29px;
-        }
+
+
     </style>
 </head>
 <body>
@@ -55,7 +74,7 @@
             <h2>Registration</h2>
            
             <br />
-            <table>
+            <table class="auto-style6">
                 <tr>
                     <td class="auto-style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username&nbsp; </td>
                     <td class="auto-style5">
