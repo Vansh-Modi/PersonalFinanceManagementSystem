@@ -1,19 +1,21 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Transaction.aspx.cs" Inherits="PersonalFinanceManagementSystem.Transaction" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Income & Expenses - Finance Management</title>
     <style>
-        body{
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
         }
 
-        header{
+        header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
@@ -34,34 +36,34 @@
         }
 
         nav a:hover {
-             background-color: #4CAF50;
-             border-radius: 5px;
+            background-color: #4CAF50;
+            border-radius: 5px;
         }
 
         .container {
-             max-width: 700px;
-             margin: 20px auto;
-             background: white;
-             padding: 20px;
-             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .tabs {
-             display: flex;
-             justify-content: space-around;
-             background: #ddd;
-             padding: 10px 0;
-             border-radius: 5px;
-             margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            background: #ddd;
+            padding: 10px 0;
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
 
         .tabs button {
-             background: none;
-             border: none;
-             padding: 10px 20px;
-             cursor: pointer;
-             font-size: 1rem;
-             color: #333;
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #333;
         }
 
         .tabs button.active {
@@ -70,61 +72,105 @@
             border-radius: 5px;
         }
 
-/*        .form-container {
-             display: none;
-        }*/
+        .form-container {
+            display: none;
+        }
 
         .form-container.active {
-             display: block;
+            display: block;
         }
 
         form {
-             display: flex;
-             flex-direction: column;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label, .textbox, button, select {
+            margin: 10px 0;
+        }
+
+        .textbox, select {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
         }
     </style>
+    <script>
+        function showForm(formId) {
+            const forms = document.querySelectorAll('.form-container');
+            const tabs = document.querySelectorAll('.tabs button');
+            forms.forEach(form => form.classList.remove('active'));
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(formId).classList.add('active');
+            document.querySelector(`[data-form="${formId}"]`).classList.add('active');
+        }
+    </script>
 </head>
 <body>
-    
     <header>
-        <h1>Personal Finance Management System</h1>
+        <h1>Finance Management System</h1>
     </header>
     <nav>
-        <a href="#">Dashboard</a>
-        <a href="#">Transaction</a>
-        <a href="#">Set Notification</a>
-        <a href="#">Report</a>
-        <a href="#">Account</a>
+        <a href="Dashboard.aspx">Dashboard</a>
+        <a href="transaction.aspx">Transaction</a>
+        <a href="SetGoal.aspx">Set Goal</a>
+        <a href="Report.aspx">Reports</a>
     </nav>
-
     <div class="container">
-        <h2>Transaction </h2>
+        <h2>Transaction</h2>
         <div class="tabs">
-
-            <button class="active" id="btnAddin">Add Income</button>
-            <button id="btnAddexp">Add Expenses</button>
-
+            <button class="active" data-form="incomeForm" onclick="showForm('incomeForm')">Add Income</button>
+            <button data-form="expensesForm" onclick="showForm('expensesForm')">Add Expenses</button>
         </div>
-        <div class="form-container active">
-            <form id="form1" runat="server">
-                <label for="incomeSource">Income Source </label>
-                <asp:TextBox ID="txtIncomeso" runat="server"></asp:TextBox>
-&nbsp;
-                <label for="Description">Description </label>
-                <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
-&nbsp;
-                <label for="incomeAmount">Income Amount</label>
-                <asp:TextBox ID="txtIncomeamt" runat="server"></asp:TextBox>
-
-                <label for="incomeDate">Income Date</label>
-                <asp:TextBox ID="txtIndate" runat="server" TextMode="Date"></asp:TextBox>
-                <br />
-                <br />
-                <asp:Button ID="btnSubmit" runat="server" Text="Add Income" />
+        <div id="incomeForm" class="form-container active">
+            <form>
+                <label for="incomeSource">Income Source</label>
+                <input class="textbox" type="text" id="incomeSource" name="incomeSource" placeholder="e.g., Salary, Business" required>
+                <label for="incomeAmount">Amount</label>
+                <input class="textbox" type="number" id="incomeAmount" name="incomeAmount" placeholder="Enter amount" required>
+                <label for="incomeDate">Date</label>
+                <input class="textbox" type="date" id="incomeDate" name="incomeDate" required>
+                <button type="submit">Add Income</button>
             </form>
         </div>
+        <div id="expensesForm" class="form-container">
+            <form>
+               <label for="expenseCategory">Expense Category</label>
+                <input class="textbox" type="text" id="expenseCategory" name="expenseCategory" placeholder="e.g., Groceries, Rent, Utilities, Entertainment" required>
 
+                <label for="expenseAmount">Amount</label>
+                <input class="textbox" type="number" id="expenseAmount" name="expenseAmount" placeholder="Enter amount" required>
+                    <label for="expenseDate">Date</label>
+                <input class="textbox" type="date" id="expenseDate" name="expenseDate" required>
+                <button type="submit">Add Expense</button>
+            </form>
+        </div>
     </div>
-   
+    <footer>
+        &copy; 2025 Finance Management System
+    </footer>
 </body>
 </html>
+
