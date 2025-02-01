@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Add Income & Expenses - Finance Management</title>
+    <title>Transaction - Finance Management</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -133,10 +133,11 @@
         <h1>Finance Management System</h1>
     </header>
     <nav>
-        <a href="Dashboard.aspx">Dashboard</a>
-        <a href="transaction.aspx">Transaction</a>
-        <a href="SetGoal.aspx">Set Goal</a>
-        <a href="Report.aspx">Reports</a>
+       <a href="Dashboard.aspx">Dashboard</a>
+       <a href="Transaction.aspx">Transaction</a>
+       <a href="Notification.aspx">Set Notification</a>
+       <a href="Report.aspx">Report</a>
+       <a href="Account.aspx">Account</a>
     </nav>
     <div class="container">
         <h2>Transaction</h2>
