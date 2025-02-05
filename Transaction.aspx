@@ -129,6 +129,7 @@
     </script>
 </head>
 <body>
+    <form id="form1" runat="server">
     <header>
         <h1>Finance Management System</h1>
     </header>
@@ -142,11 +143,12 @@
     <div class="container">
         <h2>Transaction</h2>
         <div class="tabs">
-            <button class="active" data-form="incomeForm" onclick="showForm('incomeForm')">Add Income</button>
-            <button data-form="expensesForm" onclick="showForm('expensesForm')">Add Expenses</button>
+            <asp:DropDownList ID="ddltype" runat="server" AutoPostBack="True">
+            </asp:DropDownList>
+            <asp:DropDownList ID="ddlcatagory" runat="server">
+            </asp:DropDownList>
         </div>
         <div id="incomeForm" class="form-container active">
-            <form>
                 <label for="incomeSource">Income Source</label>
                 <input class="textbox" type="text" id="incomeSource" name="incomeSource" placeholder="e.g., Salary, Business" required>
                 <label for="incomeAmount">Amount</label>
@@ -154,10 +156,8 @@
                 <label for="incomeDate">Date</label>
                 <input class="textbox" type="date" id="incomeDate" name="incomeDate" required>
                 <button type="submit">Add Income</button>
-            </form>
         </div>
         <div id="expensesForm" class="form-container">
-            <form>
                <label for="expenseCategory">Expense Category</label>
                 <input class="textbox" type="text" id="expenseCategory" name="expenseCategory" placeholder="e.g., Groceries, Rent, Utilities, Entertainment" required>
 
@@ -166,12 +166,12 @@
                     <label for="expenseDate">Date</label>
                 <input class="textbox" type="date" id="expenseDate" name="expenseDate" required>
                 <button type="submit">Add Expense</button>
-            </form>
         </div>
     </div>
     <footer>
         &copy; 2025 Finance Management System
     </footer>
+    </form>
 </body>
 </html>
 
