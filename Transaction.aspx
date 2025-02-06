@@ -143,18 +143,20 @@
     <div class="container">
         <h2>Transaction</h2>
         <div class="tabs">
-            <asp:DropDownList ID="ddltype" runat="server" AutoPostBack="True">
+            <asp:DropDownList ID="ddltype" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddltype_SelectedIndexChanged">
             </asp:DropDownList>
             <asp:DropDownList ID="ddlcatagory" runat="server">
             </asp:DropDownList>
         </div>
         <div id="incomeForm" class="form-container active">
-                <label for="incomeSource">Income Source</label>
-                <input class="textbox" type="text" id="incomeSource" name="incomeSource" placeholder="e.g., Salary, Business" required>
-                <label for="incomeAmount">Amount</label>
+                <label for="incomeAmount">
+                <br />
+                Amount</label>
                 <input class="textbox" type="number" id="incomeAmount" name="incomeAmount" placeholder="Enter amount" required>
-                <label for="incomeDate">Date</label>
-                <input class="textbox" type="date" id="incomeDate" name="incomeDate" required>
+                <label for="incomeDate">
+                <br />
+                Date</label>
+                <input class="textbox" type="date" id="incomeDate" name="incomeDate" required><br />
                 <button type="submit">Add Income</button>
         </div>
         <div id="expensesForm" class="form-container">
