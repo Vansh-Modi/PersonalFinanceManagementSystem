@@ -152,22 +152,17 @@
                 <label for="incomeAmount">
                 <br />
                 Amount</label>
-                <input class="textbox" type="number" id="incomeAmount" name="incomeAmount" placeholder="Enter amount" required>
+                <input class="textbox" type="number" id="txtamount" name="incomeAmount" placeholder="Enter amount" required>
                 <label for="incomeDate">
                 <br />
                 Date</label>
-                <input class="textbox" type="date" id="incomeDate" name="incomeDate" required><br />
-                <button type="submit">Add Income</button>
-        </div>
-        <div id="expensesForm" class="form-container">
-               <label for="expenseCategory">Expense Category</label>
-                <input class="textbox" type="text" id="expenseCategory" name="expenseCategory" placeholder="e.g., Groceries, Rent, Utilities, Entertainment" required>
-
-                <label for="expenseAmount">Amount</label>
-                <input class="textbox" type="number" id="expenseAmount" name="expenseAmount" placeholder="Enter amount" required>
-                    <label for="expenseDate">Date</label>
-                <input class="textbox" type="date" id="expenseDate" name="expenseDate" required>
-                <button type="submit">Add Expense</button>
+                <input class="textbox" type="date" id="txtdate" name="incomeDate" required><br />
+                
+             <label for="incomeAmount">
+ <br />
+ Description</label>
+ <input class="textbox" type="number" id="txtdesc" name="incomeAmount" placeholder="Enter Description" required></br>
+            <button type="submit" onclick="">ADD</button>
         </div>
     </div>
     <footer>
