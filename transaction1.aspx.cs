@@ -87,36 +87,36 @@ namespace PersonalFinanceManagementSystem
 
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection con = new SqlConnection(strcon))
-            {
-                string query = "INSERT INTO tblTransaction (type, category, amount, date, description) " +
-                               "VALUES (@type, @category, @amount, @date, @description)";
+        //protected void btnSubmit_Click(object sender, EventArgs e)
+        //{
+        //    using (SqlConnection con = new SqlConnection(strcon))
+        //    {
+        //        string query = "INSERT INTO tblTransaction (type, category, amount, date, description) " +
+        //                       "VALUES (@type, @category, @amount, @date, @description)";
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
+        //        using (SqlCommand cmd = new SqlCommand(query, con))
+        //        {
                     
-                    cmd.Parameters.AddWithValue("@type", ddlType.SelectedValue);
-                    cmd.Parameters.AddWithValue("@category", ddlcate.SelectedValue);
-                    cmd.Parameters.AddWithValue("@amount", Convert.ToDecimal(txtAmount.Text));
-                    cmd.Parameters.AddWithValue("@date", Convert.ToDateTime(txtDate.Text));
-                    cmd.Parameters.AddWithValue("@description", txtDescription.Text);
+        //            cmd.Parameters.AddWithValue("@type", ddlType.SelectedValue);
+        //            cmd.Parameters.AddWithValue("@category", ddlcate.SelectedValue);
+        //            cmd.Parameters.AddWithValue("@amount", Convert.ToDecimal(txtAmount.Text));
+        //            cmd.Parameters.AddWithValue("@date", Convert.ToDateTime(txtDate.Text));
+        //            cmd.Parameters.AddWithValue("@description", txtDescription.Text);
 
-                    try
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        lblMessage.Text = "Transaction recorded successfully.";
-                        lblMessage.ForeColor = System.Drawing.Color.Green;
-                    }
-                    catch (Exception ex)
-                    {
-                        lblMessage.Text = "Error: " + ex.Message;
-                        lblMessage.ForeColor = System.Drawing.Color.Red;
-                    }
-                }
-            }
-        }
+        //            try
+        //            {
+        //                con.Open();
+        //                cmd.ExecuteNonQuery();
+        //                lblMessage.Text = "Transaction recorded successfully.";
+        //                lblMessage.ForeColor = System.Drawing.Color.Green;
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                lblMessage.Text = "Error: " + ex.Message;
+        //                lblMessage.ForeColor = System.Drawing.Color.Red;
+        //            }
+        //        }
+        //    }
+        //}
     }
 }
