@@ -36,9 +36,10 @@ namespace PersonalFinanceManagementSystem
         {
             if (!IsPostBack)
             {
-                if (Session["user"] != null)
+                //Session["custId"] = 9;
+                if (Session["custId"] != null)
                 {
-                    userSession = Session["user"].ToString();
+                    userSession = Session["custId"].ToString();
                     // Use the selectedID as needed in your dashboard page logic
                     fnConnection();
                     fnPrintDashData();
@@ -53,10 +54,11 @@ namespace PersonalFinanceManagementSystem
 
         protected void fnPrintDashData()
         {
-            custId = 8; //it is ToString be fetch from  the session
+            custId = Convert.ToInt16(userSession);
             SqlConnection conn = new SqlConnection(strcon);
             
-            string queryIncome = "SELECT SUM(amount) FROM tblTransaction WHERE custId = @custId AND type = 'Income'";
+            string queryIncome = "SELECT SUM(t.amount) FROM tblTransaction t JOIN tblCategory c " +
+                                 "ON t.category_Id = c.category_id WHERE t.custId = @custId AND t_Id = 1";
             conn.Open();
             
             SqlDataAdapter adapter = new SqlDataAdapter(queryIncome, conn);
@@ -80,7 +82,8 @@ namespace PersonalFinanceManagementSystem
 
             //Expense code
 
-            string queryExpense = "SELECT SUM(amount) FROM tblTransaction WHERE custId = @custId AND type = 'Expense'";
+            string queryExpense = "SELECT SUM(t.amount) FROM tblTransaction t JOIN tblCategory c " +
+                                  "ON t.category_Id = c.category_id WHERE t.custId = @custId AND t_Id = 2";
 
             adapter = new SqlDataAdapter(queryExpense, conn);
             
@@ -108,7 +111,5 @@ namespace PersonalFinanceManagementSystem
             decimal budgetRemaining = totalIncome - totalExpense;
             paraDisplayBudget.InnerHtml = $"{budgetRemaining:C}";
         }
-
-
     }
 }

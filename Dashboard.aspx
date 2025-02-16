@@ -93,6 +93,22 @@
            <h3>Remaining Budget</h3>
            <p id="paraDisplayBudget" runat="server"></p>
         </div> 
+        <div class="chart-container">
+
+    <h3>Balance & Liabilities</h3>
+    <asp:Chart ID="Chart1" runat="server" Height="205px" Width="705px">
+        <series>
+            <asp:Series Name="Series1" ChartArea="ChartArea1">
+            </asp:Series>
+        </series>
+        <chartareas>
+            <asp:ChartArea Name="ChartArea1">
+            </asp:ChartArea>
+        </chartareas>
+    </asp:Chart>
+    <asp:Chart ID="chartBalance" runat="server" Width="695px">
+    </asp:Chart> 
+</div>
     </div>
     <footer>
            &copy; 2025 Personal Finance Management System

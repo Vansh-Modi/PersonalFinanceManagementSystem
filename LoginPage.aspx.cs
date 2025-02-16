@@ -39,7 +39,7 @@ namespace PersonalFinanceManagementSystem
                             Session["custName"] = dr["custName"].ToString();
 
                         }
-                        Response.Redirect("NewDashboard.aspx");
+                        Response.Redirect("Dashboard.aspx");
                     }
                     else
                     {

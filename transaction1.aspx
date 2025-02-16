@@ -54,7 +54,7 @@
             </asp:DropDownList>
             
             <label for="txtCategory">Category:</label>
-            <asp:DropDownList ID="ddlcate" runat="server">
+            <asp:DropDownList ID="ddlCategory" runat="server">
             </asp:DropDownList>
             
             <label for="txtAmount">Amount:</label>
@@ -67,6 +67,8 @@
             <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" Height="44px"></asp:TextBox>
             
             <asp:Button ID="btnSubmit" runat="server" Text="ADD" CssClass="btn" OnClick="btnSubmit_Click" />
+            Didn&#39;t found category ? :
+            <asp:LinkButton ID="lbCategory" runat="server" OnClick="lbCategory_Click">Add Category</asp:LinkButton>
             <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
         </div>
     </form>

@@ -33,13 +33,13 @@ namespace PersonalFinanceManagementSystem
         protected global::System.Web.UI.WebControls.DropDownList ddlType;
 
         /// <summary>
-        /// ddlcate control.
+        /// ddlCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlcate;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategory;
 
         /// <summary>
         /// txtAmount control.
@@ -76,6 +76,15 @@ namespace PersonalFinanceManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
+
+        /// <summary>
+        /// lbCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbCategory;
 
         /// <summary>
         /// lblMessage control.

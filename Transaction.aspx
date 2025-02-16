@@ -1,11 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Transaction.aspx.cs" Inherits="PersonalFinanceManagementSystem.Transaction" %>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction - Finance Management</title>
     <style>
         body {
@@ -46,47 +45,13 @@
             background: white;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            background: #ddd;
-            padding: 10px 0;
             border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .tabs button {
-            background: none;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 1rem;
-            color: #333;
-        }
-
-        .tabs button.active {
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .form-container {
-            display: none;
-        }
-
-        .form-container.active {
-            display: block;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
         }
 
         label, .textbox, button, select {
             margin: 10px 0;
+            display: block;
+            width: 100%;
         }
 
         .textbox, select {
@@ -103,6 +68,7 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            width: 100%;
         }
 
         button:hover {
@@ -115,6 +81,19 @@
             text-align: center;
             padding: 10px;
             margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #218838;
         }
     </style>
     <script>
@@ -130,45 +109,52 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <header>
-        <h1>Finance Management System</h1>
-    </header>
-    <nav>
-       <a href="Dashboard.aspx">Dashboard</a>
-       <a href="Transaction.aspx">Transaction</a>
-       <a href="Notification.aspx">Set Notification</a>
-       <a href="Report.aspx">Report</a>
-       <a href="Account.aspx">Account</a>
-    </nav>
-    <div class="container">
-        <h2>Transaction</h2>
-        <div class="tabs">
-            <asp:DropDownList ID="ddltype" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddltype_SelectedIndexChanged">
+        <header>
+            <h1>Finance Management System</h1>
+        </header>
+        <nav>
+            <a href="Dashboard.aspx">Dashboard</a>
+            <a href="Transaction.aspx">Transaction</a>
+            <a href="Notification.aspx">Set Notification</a>
+            <a href="Report.aspx">Report</a>
+            <a href="Account.aspx">Account</a>
+        </nav>
+        <div class="container">
+            <h2>Transaction Entry</h2>
+            <label for="ddlType">Type:</label>
+            <asp:DropDownList ID="ddlType" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlType_SelectedIndexChanged">
+                <asp:ListItem Text="Income" Value="Income" />
+                <asp:ListItem Text="Expense" Value="Expense" />
             </asp:DropDownList>
-            <asp:DropDownList ID="ddlcatagory" runat="server">
+
+            <label for="ddlCategory">Category:</label>
+            <asp:DropDownList ID="ddlCategory" runat="server">
             </asp:DropDownList>
+
+            <label for="txtAmount">Amount:</label>
+            <asp:TextBox ID="txtAmount" runat="server"></asp:TextBox>
+
+            <label for="txtDate">Date:</label>
+            <asp:TextBox ID="txtDate" runat="server" TextMode="Date"></asp:TextBox>
+
+            <label for="txtDescription">Description:</label>
+            <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" Height="44px"></asp:TextBox>
+
+            <br />
+            <br />
+
+            <asp:Button ID="btnSubmit" runat="server" Text="Add" CssClass="btn" OnClick="btnSubmit_Click" Width="130px" />
+            
+            <div>
+                Didn't find category?
+                <asp:LinkButton ID="lbCategory" runat="server" OnClick="lbCategory_Click">Add Category</asp:LinkButton>
+            </div>
+            
+            <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
         </div>
-        <div id="incomeForm" class="form-container active">
-                <label for="incomeAmount">
-                <br />
-                Amount</label>
-                <input class="textbox" type="number" id="txtamount" name="incomeAmount" placeholder="Enter amount" required>
-                <label for="incomeDate">
-                <br />
-                Date</label>
-                <input class="textbox" type="date" id="txtdate" name="incomeDate" required><br />
-                
-             <label for="incomeAmount">
- <br />
- Description</label>
- <input class="textbox" type="number" id="txtdesc" name="incomeAmount" placeholder="Enter Description" required></br>
-            <button type="submit" onclick="">ADD</button>
-        </div>
-    </div>
-    <footer>
-        &copy; 2025 Finance Management System
-    </footer>
+        <footer>
+            &copy; 2025 Finance Management System
+        </footer>
     </form>
 </body>
 </html>
-

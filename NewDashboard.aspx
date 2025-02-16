@@ -103,6 +103,16 @@
             cursor: pointer;
             font-size: 14px;
         }
+        .auto-style1 {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #ccc;
+            margin: 10px;
+            text-align: center;
+            display: inline-block;
+            width: 215px;
+        }
     </style>
 
     <!-- Icons (FontAwesome) -->
@@ -133,24 +143,24 @@
         <div class="container">
             <h2>Personal Finance Dashboard</h2>
 
-            <div class="card">
+            <div class="auto-style1">
                 <h3>Current Balance</h3>
-                <span class="green">$<asp:Label ID="lblCurrentBalance" runat="server" Text="0.00"></asp:Label></span>
+                <span class="green"><asp:Label ID="lblCurrentBalance" runat="server" Text="0.00"></asp:Label></span>
             </div>
 
-            <div class="card">
+            <div class="auto-style1">
                 <h3>Liabilities</h3>
-                <span class="red">$<asp:Label ID="lblLiabilities" runat="server" Text="0.00"></asp:Label></span>
+                <span class="red"><asp:Label ID="lblLiabilities" runat="server" Text="0.00"></asp:Label></span>
             </div>
 
             <div class="card">
                 <h3>This Month's Income</h3>
-                <span class="blue">$<asp:Label ID="lblIncome" runat="server" Text="0.00"></asp:Label></span>
+                <span class="blue"><asp:Label ID="lblIncome" runat="server" Text="0.00"></asp:Label></span>
             </div>
 
             <div class="card">
                 <h3>This Month's Expense</h3>
-                <span class="orange">$<asp:Label ID="lblExpense" runat="server" Text="0.00"></asp:Label></span>
+                <span class="orange"><asp:Label ID="lblExpense" runat="server" Text="0.00"></asp:Label></span>
             </div>
 
             <div class="chart-container">
