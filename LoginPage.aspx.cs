@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
 
 namespace PersonalFinanceManagementSystem
 {
-    public partial class login : System.Web.UI.Page
-    {
+	public partial class LoginPage : System.Web.UI.Page
+	{
         string cs = ConfigurationManager.ConnectionStrings["PersonalFinanceManagementSystem"].ConnectionString;
-
         protected void Page_Load(object sender, EventArgs e)
-        {
+		{
 
-        }
+		}
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
@@ -34,8 +33,13 @@ namespace PersonalFinanceManagementSystem
 
                     if (dr.HasRows)
                     {
-                        Session["user"] = txtusername.Text;
-                        Response.Redirect("Dashboard.aspx");
+                        while (dr.Read())
+                        {
+                            Session["custId"] = dr["custId"].ToString();
+                            Session["custName"] = dr["custName"].ToString();
+
+                        }
+                        Response.Redirect("NewDashboard.aspx");
                     }
                     else
                     {

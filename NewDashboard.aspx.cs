@@ -11,7 +11,7 @@ namespace PersonalFinanceManagementSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Write("Welcome " + Session["custName"].ToString());
         }
     }
 }
