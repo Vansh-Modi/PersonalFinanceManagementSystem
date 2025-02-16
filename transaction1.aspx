@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="transaction1.aspx.cs" Inherits="PersonalFinanceManagementSystem.transaction1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Transaction1.aspx.cs" Inherits="PersonalFinanceManagementSystem.transaction1" %>
 
 <!DOCTYPE html>
 

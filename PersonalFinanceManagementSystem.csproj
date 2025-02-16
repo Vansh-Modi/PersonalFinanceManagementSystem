@@ -68,28 +68,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account.aspx" />
+    <Content Include="NewDashboard.aspx" />
     <Content Include="App_Data\PersonalFinanceManagementSystem.mdf" />
     <Content Include="App_Data\PersonalFinanceManagementSystem_log.ldf">
       <DependentUpon>PersonalFinanceManagementSystem.mdf</DependentUpon>
     </Content>
     <Content Include="Dashboard.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="login.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Notification.aspx" />
     <Content Include="RegistrationPage.aspx" />
     <Content Include="Report.aspx" />
     <Content Include="Transaction.aspx" />
-    <Content Include="transaction1.aspx" />
+    <Content Include="Transaction1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.aspx.cs">
-      <DependentUpon>Account.aspx</DependentUpon>
+    <Compile Include="NewDashboard.aspx.cs">
+      <DependentUpon>NewDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account.aspx.designer.cs">
-      <DependentUpon>Account.aspx</DependentUpon>
+    <Compile Include="NewDashboard.aspx.designer.cs">
+      <DependentUpon>NewDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
@@ -101,12 +101,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Notification.aspx.cs">
       <DependentUpon>Notification.aspx</DependentUpon>
@@ -137,12 +137,12 @@
     <Compile Include="Transaction.aspx.designer.cs">
       <DependentUpon>Transaction.aspx</DependentUpon>
     </Compile>
-    <Compile Include="transaction1.aspx.cs">
-      <DependentUpon>transaction1.aspx</DependentUpon>
+    <Compile Include="Transaction1.aspx.cs">
+      <DependentUpon>Transaction1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="transaction1.aspx.designer.cs">
-      <DependentUpon>transaction1.aspx</DependentUpon>
+    <Compile Include="Transaction1.aspx.designer.cs">
+      <DependentUpon>Transaction1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
