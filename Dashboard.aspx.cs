@@ -15,7 +15,7 @@ namespace PersonalFinanceManagementSystem
     {
         SqlConnection conn;
         string strcon;
-        string userSession;
+        int userSession ;
         int custId;
 
         protected void fnConnection()
@@ -39,7 +39,7 @@ namespace PersonalFinanceManagementSystem
                 //Session["custId"] = 9;
                 if (Session["custId"] != null)
                 {
-                    userSession = Session["custId"].ToString();
+                    userSession = Convert.ToInt16(Session["custId"]);
                     // Use the selectedID as needed in your dashboard page logic
                     fnConnection();
                     fnPrintDashData();

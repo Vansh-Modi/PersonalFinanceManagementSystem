@@ -40,7 +40,7 @@ namespace PersonalFinanceManagementSystem
                 conn.Close();
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Registration Successful!');", true);
-                Response.Redirect("Login.aspx");
+                Response.Redirect("LoginPage.aspx");
             }
             catch (Exception ex)
             {
