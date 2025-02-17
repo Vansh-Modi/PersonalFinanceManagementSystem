@@ -33,13 +33,13 @@ namespace PersonalFinanceManagementSystem
         protected global::System.Web.UI.WebControls.TextBox txtusername;
 
         /// <summary>
-        /// revUserName control.
+        /// rfvName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revUserName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvName;
 
         /// <summary>
         /// txtpass control.
@@ -51,13 +51,13 @@ namespace PersonalFinanceManagementSystem
         protected global::System.Web.UI.WebControls.TextBox txtpass;
 
         /// <summary>
-        /// revPass control.
+        /// rfvPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPass;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPass;
 
         /// <summary>
         /// btnlogin control.

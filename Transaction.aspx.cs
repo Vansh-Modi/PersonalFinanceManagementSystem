@@ -104,7 +104,7 @@ namespace PersonalFinanceManagementSystem
                 ddlCategory.DataBind();
 
                 conn.Close();
-                ddlCategory.Items.Insert(0, new ListItem("--Select Type--"));
+                ddlCategory.Items.Insert(0, new ListItem("--Select Type--" , "0"));
             }
             catch (SqlException sqlEx)
             {

@@ -46,10 +46,7 @@
          text-align: center;
          margin-top : 320px;
      }
-     .auto-style7 {
-         text-align: left;
-     }
- </style>
+     </style>
 </head>
 <body>
       <header><h1>Personal Finance Management System</h1></header>
@@ -60,33 +57,35 @@
     <form id="form1" runat="server">
         <div><table class="auto-style1">
     <tr>
-        <td class="auto-style3"><strong>Username :</strong></td>
+        <td class="auto-style3"><strong>Username:</strong></td>
         <td>
             <asp:TextBox ID="txtusername" runat="server"></asp:TextBox>
-            <asp:RegularExpressionValidator ID="revUserName" runat="server" ControlToValidate="txtusername" ErrorMessage="Enter UserName"></asp:RegularExpressionValidator>
             <br />
-            <br />
+        </td>
+        <td class="auto-style4">
+            <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtusername" ErrorMessage="Enter UserName"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
-        <td class="auto-style3"><strong>Password :</strong></td>
+        <td class="auto-style3"><strong>Password:</strong></td>
         <td>
-            <asp:TextBox ID="txtpass" runat="server" TextMode="Password"></asp:TextBox>
-            <br />
-            <asp:RegularExpressionValidator ID="revPass" runat="server" ControlToValidate="txtpass" ErrorMessage="Required Password"></asp:RegularExpressionValidator>
-            <br />
+            <asp:TextBox ID="txtpass" runat="server" TextMode="Password"></asp:TextBox>            
         </td>
+        <td class="auto-style4"><asp:RequiredFieldValidator ID="rfvPass" runat="server" ControlToValidate="txtpass" ErrorMessage="Enter Password"></asp:RequiredFieldValidator></td>
     </tr>
     <tr>
         <td class="auto-style4" colspan="2">
             <asp:Button ID="btnlogin" runat="server" OnClick="btnlogin_Click" Text="Login" />
             <br />
-            <span style="color: rgb(28, 45, 56); font-family:Euclid Circular A ; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Don&#39;t have an account?<asp:LinkButton ID="lblregister" runat="server" OnClick="lblregister_Click">Register</asp:LinkButton>
-            </span>
+            <span style="color: rgb(28, 45, 56); font-family: Euclid Circular A; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+    Don't have an account?<asp:LinkButton ID="lblregister" runat="server" OnClick="lblregister_Click" ValidateRequestMode="Disabled" CausesValidation="false">Register</asp:LinkButton>
+</span>
+
         </td>
+        <td></td>
     </tr>
 </table>
-        </div>
+        </div>  
     </form>
 </body>
 </html>

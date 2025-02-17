@@ -111,14 +111,17 @@
         </nav>
         <div class="container">
             <h2>Add Category</h2>
-            <label for="ddlType">Type:</label>
+            <label for="ddlType">Type:<asp:RequiredFieldValidator ID="rfvType" runat="server" ControlToValidate="ddlType" InitialValue="0" ErrorMessage="Select Type" ForeColor="Red"></asp:RequiredFieldValidator>
+
+            </label>
             <asp:DropDownList ID="ddlType" runat="server" AutoPostBack="True">
                 <asp:ListItem Text="Income" Value="Income" />
                 <asp:ListItem Text="Expense" Value="Expense" />
             </asp:DropDownList>
 
-            <label for="txtCategory">Category:</label>
-            <asp:TextBox ID="txtCategory" runat="server" Width="95%" Height="31px"></asp:TextBox>
+            <label for="txtCategory">Category:<asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="txtCategory" ErrorMessage="Select Category" ForeColor="Red"></asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:TextBox ID="txtCategory" runat="server" Width="95%" Height="31px"></asp:TextBox>
 
             <br />
             <br />

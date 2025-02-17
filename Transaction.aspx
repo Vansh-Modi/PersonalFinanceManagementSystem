@@ -95,6 +95,28 @@
         .btn:hover {
             background-color: #218838;
         }
+        .auto-style1 {
+            text-align: right;
+        }
+        <style>
+    .left-align {
+        text-align: left;
+    }
+
+    .right-align {
+        text-align: right;
+    }
+
+    .auto-style1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+        .auto-style2 {
+            text-align: left;
+        }
+    </style>
+
     </style>
     <script>
         function showForm(formId) {
@@ -131,11 +153,25 @@
             <asp:DropDownList ID="ddlCategory" runat="server">
             </asp:DropDownList>
 
+            <div class="auto-style1">
+    <div class="auto-style2">
+        <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="ddlCategory" ErrorMessage="Select Category" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
+    </div>
+    <div class="right-align">
+        Didn't find category?
+        <asp:LinkButton ID="lbCategory" runat="server" OnClick="lbCategory_Click">Add Category</asp:LinkButton>
+    </div>
+</div>
+            
             <label for="txtAmount">Amount:</label>
             <asp:TextBox ID="txtAmount" runat="server"></asp:TextBox>
 
+            <asp:RequiredFieldValidator ID="rfvAmt" runat="server" ControlToValidate="txtAmount" ErrorMessage="Enter Amount" ForeColor="Red"></asp:RequiredFieldValidator>
+
             <label for="txtDate">Date:</label>
             <asp:TextBox ID="txtDate" runat="server" TextMode="Date"></asp:TextBox>
+
+            <asp:RequiredFieldValidator ID="rfvDate" runat="server" ControlToValidate="txtDate" ErrorMessage="Enter Date" ForeColor="Red"></asp:RequiredFieldValidator>
 
             <label for="txtDescription">Description:</label>
             <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" Height="44px"></asp:TextBox>
@@ -145,15 +181,11 @@
 
             <asp:Button ID="btnSubmit" runat="server" Text="Add" CssClass="btn" OnClick="btnSubmit_Click" Width="130px" />
             
-            <div>
-                Didn't find category?
-                <asp:LinkButton ID="lbCategory" runat="server" OnClick="lbCategory_Click">Add Category</asp:LinkButton>
-            </div>
-            
             <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
         </div>
         <footer>
             &copy; 2025 Finance Management System
+        em
         </footer>
     </form>
 </body>
