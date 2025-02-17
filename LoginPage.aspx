@@ -63,6 +63,7 @@
         <td class="auto-style3"><strong>Username :</strong></td>
         <td>
             <asp:TextBox ID="txtusername" runat="server"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="revUserName" runat="server" ControlToValidate="txtusername" ErrorMessage="Enter UserName"></asp:RegularExpressionValidator>
             <br />
             <br />
         </td>
@@ -72,6 +73,7 @@
         <td>
             <asp:TextBox ID="txtpass" runat="server" TextMode="Password"></asp:TextBox>
             <br />
+            <asp:RegularExpressionValidator ID="revPass" runat="server" ControlToValidate="txtpass" ErrorMessage="Required Password"></asp:RegularExpressionValidator>
             <br />
         </td>
     </tr>

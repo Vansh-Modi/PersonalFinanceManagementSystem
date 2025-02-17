@@ -37,7 +37,7 @@ namespace PersonalFinanceManagementSystem
 
                 try
                 {
-                    //Session["custId"] = 8;
+                    Session["custId"] = 8;
                     //Response.Write(Session["custId"]);
                     if (Session["custId"] != null)
                     {
