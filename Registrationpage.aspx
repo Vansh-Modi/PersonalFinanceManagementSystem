@@ -80,7 +80,7 @@ footer {
                     <td class="auto-style5">
                         <asp:TextBox ID="txtusern" runat="server"></asp:TextBox>
                     </td><td>
-                        <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtusern" ErrorMessage="Enter UserName"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtusern" ErrorMessage="Enter UserName" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -88,8 +88,8 @@ footer {
                     <td>
                         <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
                     </td><td>
-                        <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Enter Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Enter Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is require" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -97,7 +97,7 @@ footer {
                     <td>
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                     </td><td>
-                        <asp:RequiredFieldValidator ID="rfvPass" runat="server" ControlToValidate="txtPassword" ErrorMessage="Enter Password"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvPass" runat="server" ControlToValidate="txtPassword" ErrorMessage="Enter Password" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -106,7 +106,7 @@ footer {
                         <asp:TextBox ID="txtConfirmPass" runat="server" TextMode="Password"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:CompareValidator ID="cvPass" runat="server" ControlToCompare="txtConfirmPass" ControlToValidate="txtPassword" ErrorMessage="Password Missmatch"></asp:CompareValidator>
+                        <asp:CompareValidator ID="cvPass" runat="server" ControlToCompare="txtConfirmPass" ControlToValidate="txtPassword" ErrorMessage="Password Missmatch" ForeColor="Red"></asp:CompareValidator>
                     </td>
                 </tr>
                 <tr>
@@ -115,7 +115,7 @@ footer {
                         <asp:TextBox ID="txtphone" runat="server" TextMode="Phone"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtphone" ErrorMessage="Enter Number"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtphone" ErrorMessage="Enter Number" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -123,6 +123,8 @@ footer {
                         <br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnreset" runat="server" OnClick="btnreset_Click" Text="Reset" Width="85px" />
                     </td><td></td>
                 </tr>
                 </table>
