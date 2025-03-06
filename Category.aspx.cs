@@ -33,8 +33,6 @@ namespace PersonalFinanceManagementSystem
             {
                 try
                 {
-                    Session["custId"] = 8;
-                    Response.Write(Session["custId"]);
                     if (Session["custId"] != null)
                     {
                         userSession = Session["custId"].ToString();
@@ -42,7 +40,7 @@ namespace PersonalFinanceManagementSystem
                     }
                     else
                     {
-                        Response.Redirect("Login.aspx");
+                        Response.Redirect("LoginPage.aspx");
                     }
                 }
                 catch (Exception ex)
@@ -54,22 +52,21 @@ namespace PersonalFinanceManagementSystem
 
         private void bindType()
         {
-            using (SqlConnection conn = new SqlConnection(strcon))
-            {
-                conn.Open();
-                string query = "SELECT * FROM tblType";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            SqlConnection conn = new SqlConnection(strcon);
+            conn.Open();
+            string query = "SELECT * FROM tblType";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
 
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
 
-                ddlType.DataSource = dt;
-                ddlType.DataTextField = "type_name";
-                ddlType.DataValueField = "t_Id";
-                ddlType.DataBind();
+            ddlType.DataSource = dt;
+            ddlType.DataTextField = "type_name";
+            ddlType.DataValueField = "t_Id";
+            ddlType.DataBind();
 
-                ddlType.Items.Insert(0, new ListItem("--Select Type--", "0"));
-            }
+            ddlType.Items.Insert(0, new ListItem("--Select Type--", "0"));
+            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

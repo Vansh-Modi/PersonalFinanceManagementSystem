@@ -26,28 +26,21 @@ namespace PersonalFinanceManagementSystem
             {
                 conn.Open();
             }
-            else
-            {
-                Response.Write("Connection was not Established");
-            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //Session["custId"] = 9;
                 if (Session["custId"] != null)
                 {
                     userSession = Convert.ToInt16(Session["custId"]);
-                    // Use the selectedID as needed in your dashboard page logic
                     fnConnection();
                     fnPrintDashData();
                 }
                 else
                 {
-                    // Handle the case where the Session variable is null (e.g., redirect to login page)
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("LoginPage.aspx");
                 }
             }
         }

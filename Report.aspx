@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Report.aspx.cs" Inherits="PersonalFinanceManagementSystem.Report" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +65,7 @@
             color: white;
             text-align: center;
             padding: 10px;
-            margin-top: 310px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -90,19 +89,8 @@
                     <th>Amount</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>2025-01-01</td>
-                    <td>Salary</td>
-                    <td>Income</td>
-                    <td>$5,000</td>
-                </tr>
-                <tr>
-                    <td>2025-01-05</td>
-                    <td>Groceries</td>
-                    <td>Expense</td>
-                    <td>$200</td>
-                </tr>
+            <tbody id="TransactionTableBody" runat="server">
+                <!-- Rows will be added here dynamically -->
             </tbody>
         </table>
     </div>

@@ -37,20 +37,16 @@ namespace PersonalFinanceManagementSystem
 
                 try
                 {
-                    Session["custId"] = 8;
-                    //Response.Write(Session["custId"]);
                     if (Session["custId"] != null)
                     {
                        
                         Response.Write(userSession);
-                        // Use the selectedID as needed in your dashboard page logic
 
                         bindType();
                     }
                     else
                     {
-                        // Handle the case where the Session variable is null (e.g., redirect to login page)
-                        Response.Redirect("Login.aspx");
+                        Response.Redirect("LoginPage.aspx");
                     }
                 }
                 catch (Exception ex)
