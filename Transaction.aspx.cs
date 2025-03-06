@@ -39,14 +39,12 @@ namespace PersonalFinanceManagementSystem
                 {
                     if (Session["custId"] != null)
                     {
-                       
                         Response.Write(userSession);
-
                         bindType();
                     }
                     else
                     {
-                        Response.Redirect("LoginPage.aspx");
+                        Response.Redirect("Login.aspx");
                     }
                 }
                 catch (Exception ex)
@@ -76,7 +74,7 @@ namespace PersonalFinanceManagementSystem
 
             //conn.Close();
 
-            ddlType.Items.Insert(0, new ListItem("--Select Type--","0"));
+            ddlType.Items.Insert(0, new ListItem("--Select Type--", "0"));
         }
 
         protected void ddlType_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,7 +98,7 @@ namespace PersonalFinanceManagementSystem
                 ddlCategory.DataBind();
 
                 conn.Close();
-                ddlCategory.Items.Insert(0, new ListItem("--Select Type--" , "0"));
+                ddlCategory.Items.Insert(0, new ListItem("--Select Type--", "0"));
             }
             catch (SqlException sqlEx)
             {

@@ -33,6 +33,8 @@ namespace PersonalFinanceManagementSystem
             {
                 try
                 {
+                    Session["custId"] = 8;
+                    Response.Write(Session["custId"]);
                     if (Session["custId"] != null)
                     {
                         userSession = Session["custId"].ToString();
@@ -40,7 +42,7 @@ namespace PersonalFinanceManagementSystem
                     }
                     else
                     {
-                        Response.Redirect("LoginPage.aspx");
+                        Response.Redirect("Login.aspx");
                     }
                 }
                 catch (Exception ex)
@@ -66,7 +68,6 @@ namespace PersonalFinanceManagementSystem
             ddlType.DataBind();
 
             ddlType.Items.Insert(0, new ListItem("--Select Type--", "0"));
-            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

@@ -22,16 +22,16 @@ namespace PersonalFinanceManagementSystem
         {
             string user = txtusern.Text;
             string email = txtEmail.Text;
-            string password = txtPassword.Text; 
+            string password = txtPassword.Text;
             string phone = txtphone.Text;
-          
+
             string query = "insert into tblCustomer values(@user,@email,@pass,@phone)";
             SqlConnection conn = new SqlConnection(cs);
-            SqlCommand cmd = new SqlCommand(query, conn);   
+            SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@user", user);
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@pass", password);
-            cmd.Parameters.AddWithValue("@phone",phone);
+            cmd.Parameters.AddWithValue("@phone", phone);
 
             try
             {
