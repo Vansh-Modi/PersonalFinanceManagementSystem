@@ -159,9 +159,8 @@
         <asp:RequiredFieldValidator ID="rfvType" runat="server" ControlToValidate="ddlType" ErrorMessage="Select Type" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
     </div>
     <div class="right-align">
-        Didn't find category?
-        <asp:LinkButton ID="lbCategory" runat="server" OnClick="lbCategory_Click">Add Category</asp:LinkButton>
-    </div>
+        Didn't find category?<asp:HyperLink ID="hlCategory" runat="server" NavigateUrl="~/Category.aspx">Add Category</asp:HyperLink>
+&nbsp;</div>
 </div>
             
             <label for="txtAmount">Amount:</label>

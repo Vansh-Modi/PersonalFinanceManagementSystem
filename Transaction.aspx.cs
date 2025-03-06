@@ -142,12 +142,6 @@ namespace PersonalFinanceManagementSystem
             }
         }
 
-
-        protected void lbCategory_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("category.aspx");
-        }
-
         protected void fnClearAllFields()
         {
             ddlType.Items.Clear();
