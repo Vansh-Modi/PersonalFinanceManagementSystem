@@ -68,7 +68,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="aboutas.html" />
     <Content Include="Account.aspx" />
     <Content Include="Budget.aspx" />
     <Content Include="Category.aspx" />

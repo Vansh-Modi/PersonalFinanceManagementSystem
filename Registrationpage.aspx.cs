@@ -48,14 +48,5 @@ namespace PersonalFinanceManagementSystem
             }
 
         }
-
-        protected void btnreset_Click(object sender, EventArgs e)
-        {
-            txtusern.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            txtPassword.Text = string.Empty;
-            txtConfirmPass.Text = string.Empty;
-            txtphone.Text = string.Empty;
-        }
     }
 }

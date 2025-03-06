@@ -156,6 +156,7 @@
             <div class="auto-style1">
     <div class="auto-style2">
         <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="ddlCategory" ErrorMessage="Select Category" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="rfvType" runat="server" ControlToValidate="ddlType" ErrorMessage="Select Type" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator>
     </div>
     <div class="right-align">
         Didn't find category?

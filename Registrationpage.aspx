@@ -89,7 +89,7 @@ footer {
                         <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
                     </td><td>
                         <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Enter Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red"></asp:RegularExpressionValidator>
-                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is require" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -123,8 +123,6 @@ footer {
                         <br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnreset" runat="server" OnClick="btnreset_Click" Text="Reset" Width="85px" />
                     </td><td></td>
                 </tr>
                 </table>

@@ -63,7 +63,7 @@
             <br />
         </td>
         <td class="auto-style4">
-            <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtusername" ErrorMessage="Enter UserName"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtusername" ErrorMessage="Enter UserName" ForeColor="Red"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -71,7 +71,7 @@
         <td>
             <asp:TextBox ID="txtpass" runat="server" TextMode="Password"></asp:TextBox>            
         </td>
-        <td class="auto-style4"><asp:RequiredFieldValidator ID="rfvPass" runat="server" ControlToValidate="txtpass" ErrorMessage="Enter Password"></asp:RequiredFieldValidator></td>
+        <td class="auto-style4"><asp:RequiredFieldValidator ID="rfvPass" runat="server" ControlToValidate="txtpass" ErrorMessage="Enter Password" ForeColor="Red"></asp:RequiredFieldValidator></td>
     </tr>
     <tr>
         <td class="auto-style4" colspan="2">

@@ -80,7 +80,7 @@ namespace PersonalFinanceManagementSystem
 
             //conn.Close();
 
-            ddlType.Items.Insert(0, new ListItem("--Select Type--"));
+            ddlType.Items.Insert(0, new ListItem("--Select Type--","0"));
         }
 
         protected void ddlType_SelectedIndexChanged(object sender, EventArgs e)
