@@ -68,11 +68,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="aboutas.html" />
     <Content Include="Account.aspx" />
     <Content Include="Budget.aspx" />
     <Content Include="Category.aspx" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="NewDashboard.aspx" />
     <Content Include="App_Data\PersonalFinanceManagementSystem.mdf" />
     <Content Include="App_Data\PersonalFinanceManagementSystem_log.ldf">
       <DependentUpon>PersonalFinanceManagementSystem.mdf</DependentUpon>
@@ -83,7 +83,6 @@
     <Content Include="RegistrationPage.aspx" />
     <Content Include="Report.aspx" />
     <Content Include="Transaction.aspx" />
-    <Content Include="Transaction1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,13 +113,6 @@
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NewDashboard.aspx.cs">
-      <DependentUpon>NewDashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NewDashboard.aspx.designer.cs">
-      <DependentUpon>NewDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
@@ -160,13 +152,6 @@
     </Compile>
     <Compile Include="Transaction.aspx.designer.cs">
       <DependentUpon>Transaction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Transaction1.aspx.cs">
-      <DependentUpon>Transaction1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Transaction1.aspx.designer.cs">
-      <DependentUpon>Transaction1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
