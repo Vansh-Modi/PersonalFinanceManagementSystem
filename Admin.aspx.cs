@@ -17,8 +17,7 @@ namespace PersonalFinanceManagementSystem
         protected void Page_Load(object sender, EventArgs e)
         {
             fnConnection();
-            bindgrid();
-            LoadUsers();
+            bindgrid(); 
         }
 
         protected void fnConnection()
@@ -50,32 +49,73 @@ namespace PersonalFinanceManagementSystem
             conn.Close();
         }
 
-        protected void LoadUsers()
+        protected void grvshow_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(strcon))
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT custId, custName, email, phNo FROM tblCustomer", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                grvshow.DataSource = dt;
-                grvshow.DataBind();
-            }
+            GridViewRow row = grvshow.Rows[e.NewSelectedIndex];
+            
+            string custName = row.Cells[2].Text;
+            string email = row.Cells[3].Text;
+            string pass = row.Cells[4].Text;
+            string phone = row.Cells[5].Text;
+
+            txtname.Text = custName;
+            txtemail.Text = email;
+            txtphone.Text = phone;
+            txtpass.Text = pass;
+
         }
 
-        protected void grvshow_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void btndele_Click(object sender, EventArgs e)
         {
-            int userId = Convert.ToInt32(grvshow.DataKeys[e.RowIndex].Value);
 
-            using (SqlConnection con = new SqlConnection(strcon))
-            {
-                SqlCommand cmd = new SqlCommand("DELETE FROM tblCustomer WHERE custId = @UserID", con);
-                cmd.Parameters.AddWithValue("@UserID", userId);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
+            //GridViewRow row = grvshow.SelectedRow;
+            //int custId = Convert.ToInt16(row.Cells[1].Text);
 
-            LoadUsers();
+            //string query = "delete from tblCustomer where custId=@custId";
+
+            //SqlConnection conn = new SqlConnection(strcon);
+            //SqlCommand cmd = new SqlCommand(@query, conn);
+
+            //cmd.Parameters.AddWithValue("@custId", custId);
+
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
+
+            //bindgrid();
+            GridViewRow row = grvshow.SelectedRow;
+
+                int custId = Convert.ToInt32(row.Cells[1].Text);
+                string query = "DELETE FROM tblCustomer WHERE custId=@custId";
+                using (SqlConnection conn = new SqlConnection(strcon))
+                {
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@custId", custId);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                bindgrid();
+            
+        }
+
+        protected void btnup_Click(object sender, EventArgs e)
+        {
+            GridViewRow row = grvshow.SelectedRow;
+
+            int custId = Convert.ToInt32(row.Cells[1].Text);
+                string query = "UPDATE tblCustomer SET custName=@custName, email=@email,password = @password,phNo = @phNo WHERE custId=@custId";
+            SqlConnection conn = new SqlConnection(strcon);
+                
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@custName", txtname.Text);
+                    cmd.Parameters.AddWithValue("@email", txtemail.Text);
+            cmd.Parameters.AddWithValue("@password", txtpass.Text);
+            cmd.Parameters.AddWithValue("@phNo", txtphone.Text);
+                    
+                    cmd.Parameters.AddWithValue("@custId", custId);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                bindgrid();
         }
     }
 }
