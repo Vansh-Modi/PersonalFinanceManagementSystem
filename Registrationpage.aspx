@@ -6,56 +6,95 @@
 <head runat="server">
     <title>Registration Page</title>
     <style>
-     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-}
+    body{
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f9f9f9;
+    }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
+    header{
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
 
-h2 {
-    text-align: center;
-    color: #4CAF50;
-    margin-top: 20px;
-}
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
 
-table {
-    margin: 0 auto;
-    border-spacing: 10px;
-    margin-top: 30px;
-    margin-left:10px;
-}
+    .logo {
+        position: absolute;
+        left: 20px;
+        height : 75px
+    }
 
-td {
-    text-align: center;
-    padding: 5px;
-}
+    .logout-btn {
+        position: absolute;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: background-color 0.3s, color 0.3s;
+    }
 
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+    .logout-btn:hover {
+        background-color: white;
+        color: #333;
+    }
 
-.auto-style2 {
-    width: 473px;
-}
 
-.auto-style5 {
-    height: 29px;
-}
+    nav{
+        background: #333;
+        padding: 10px;
+        text-align: center;
+
+    }
+
+    nav h2{
+         color: white;
+         margin: 0 10px;
+         text-decoration: none;
+         padding: 8px 15px;
+    }
+
+    table {
+        margin: 0 auto;
+        border-spacing: 10px;
+        margin-top: 30px;
+        margin-left:10px;
+    }
+
+    td {
+        text-align: center;
+        padding: 5px;
+    }
+
+    footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .auto-style2 {
+        width: 473px;
+    }
+
+    .auto-style5 {
+        height: 29px;
+    }
 
 
         .auto-style6 {
@@ -64,16 +103,21 @@ footer {
         }
 
 
-        </style>
+ </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <header><h1>Personal Finance Management System</h1></header>
+        <header>
+            <div class="header-container">
+                <a href="Dashboard.aspx" class="logo" ><img src="Logo\Logo.png" alt="Logo" class="logo" /></a>
+                <h1>Personal Finance Management System</h1>
+            </div>
+        </header>
 
-        <div>
-            <h2>Registration</h2>
-           
-            <br />
+        <nav>
+            <h2>Registration Page</h2>
+        </nav>
+
             <table class="auto-style6">
                 <tr>
                     <td class="auto-style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username&nbsp; :</td>

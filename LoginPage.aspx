@@ -6,17 +6,47 @@
 <head runat="server">
     <title>Login Page</title>
  <style type="text/css">
-     body {
-         font-family: Arial, sans-serif;
-         margin: 0;
-         padding: 0;
-         background-color: #f4f4f9;
-     }
+    body{
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f9f9f9;
+}
 
-     h2{
-         text-align: center;
-         color: #4CAF50;
-     }
+    header{
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .logo {
+        position: absolute;
+        left: 20px;
+        height : 75px
+    }
+
+    nav{
+        background: #333;
+        padding: 10px;
+        text-align: center;
+
+    }
+
+    nav h2{
+         color: white;
+         margin: 0 10px;
+         text-decoration: none;
+         padding: 8px 15px;
+    }
+
      .auto-style1 {
          margin:auto;
          width:300px;
@@ -49,11 +79,18 @@
      </style>
 </head>
 <body>
-      <header><h1>Personal Finance Management System</h1></header>
+      <header>
+    <div class="header-container">
+        <a href="Dashboard.aspx" class="logo" ><img src="Logo\Logo.png" alt="Logo" class="logo" /></a>
+        <h1>Personal Finance Management System</h1>
+    </div>
+</header>
+
+<nav>
+    <h2>Login Page</h2>
+</nav>
 
 <h2 class="auto-style6">&nbsp;</h2>
-        <h2 class="auto-style6">&nbsp;</h2>
-        <h2 class="auto-style6">&nbsp;&nbsp;Login</h2>
     <form id="form1" runat="server">
         <div><table class="auto-style1">
     <tr>

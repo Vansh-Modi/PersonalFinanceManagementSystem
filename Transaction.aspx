@@ -7,34 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction - Finance Management</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
+        body{
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             background-color: #f9f9f9;
         }
 
-        header {
+        header{
             background-color: #4CAF50;
             color: white;
             text-align: center;
             padding: 10px;
         }
 
-        nav {
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            height : 75px
+        }
+
+        .logout-btn {
+            position: absolute;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: white;
+            color: #333;
+        }
+
+
+        nav{
             background: #333;
             padding: 10px;
             text-align: center;
+
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 5px;
-            padding: 8px 15px;
+        nav a{
+             color: white;
+             margin: 0 10px;
+             text-decoration: none;
+             padding: 8px 15px;
         }
 
-        nav a:hover {
+        nav a:hover{
             background-color: #4CAF50;
             border-radius: 5px;
         }
@@ -98,25 +130,23 @@
         .auto-style1 {
             text-align: right;
         }
-        <style>
-    .left-align {
-        text-align: left;
-    }
 
-    .right-align {
-        text-align: right;
-    }
+        .left-align {
+            text-align: left;
+        }
 
-    .auto-style1 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        .right-align {
+            text-align: right;
+        }
+
+        .auto-style1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .auto-style2 {
             text-align: left;
         }
-    </style>
-
     </style>
     <script>
         function showForm(formId) {
@@ -125,22 +155,28 @@
             forms.forEach(form => form.classList.remove('active'));
             tabs.forEach(tab => tab.classList.remove('active'));
             document.getElementById(formId).classList.add('active');
-            document.querySelector(`[data-form="${formId}"]`).classList.add('active');
+            document.querySelector([data - form="${formId}"]).classList.add('active');
         }
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <header>
-            <h1>Finance Management System</h1>
-        </header>
-        <nav>
-            <a href="Dashboard.aspx">Dashboard</a>
-            <a href="Transaction.aspx">Transaction</a>
-            <a href="Notification.aspx">Set Notification</a>
-            <a href="Report.aspx">Report</a>
-            <a href="Account.aspx">Account</a>
-        </nav>
+        
+    <header>
+        <div class="header-container">
+            <a href="Dashboard.aspx" class="logo" ><img src="Logo\Logo.png" alt="Logo" class="logo" /></a>
+            <h1>Personal Finance Management System</h1>
+            <a href="LoginPage.aspx" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="Dashboard.aspx">Dashboard</a>
+        <a href="Transaction.aspx">Transaction</a>
+        <a href="Notification.aspx">Set Notification</a>
+        <a href="Report.aspx">Report</a>
+        <a href="Account.aspx">Account</a>
+    </nav>
         <div class="container">
             <h2>Transaction Entry</h2>
             <label for="ddlType">Type:</label>

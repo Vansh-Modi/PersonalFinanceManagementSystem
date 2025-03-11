@@ -5,30 +5,66 @@
 <head>
     <title>Reports - Finance Management</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
+        body{
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             background-color: #f9f9f9;
         }
-        header {
+
+        header{
             background-color: #4CAF50;
             color: white;
             text-align: center;
             padding: 10px;
         }
-        nav {
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            height : 75px
+        }
+
+        .logout-btn {
+            position: absolute;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: white;
+            color: #333;
+        }
+
+
+        nav{
             background: #333;
             padding: 10px;
             text-align: center;
+
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 5px;
-            padding: 8px 15px;
+
+        nav a{
+             color: white;
+             margin: 0 10px;
+             text-decoration: none;
+             padding: 8px 15px;
         }
-        nav a:hover {
+
+        nav a:hover{
             background-color: #4CAF50;
             border-radius: 5px;
         }
@@ -70,7 +106,14 @@
     </style>
 </head>
 <body>
-    <header><h1>Personal Finance Management System</h1></header>
+    <header>
+        <div class="header-container">
+            <a href="Dashboard.aspx" class="logo" ><img src="Logo\Logo.png" alt="Logo" class="logo" /></a>
+            <h1>Personal Finance Management System</h1>
+            <a href="LoginPage.aspx" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
     <nav>
         <a href="Dashboard.aspx">Dashboard</a>
         <a href="Transaction.aspx">Transaction</a>

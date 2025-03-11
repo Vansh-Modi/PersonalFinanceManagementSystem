@@ -6,13 +6,169 @@
 <head runat="server">
     <title></title>
     <style>
+          body{
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f9f9f9;
+}
 
-   
+header{
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    height : 75px
+}
+
+nav{
+    background: #333;
+    padding: 10px;
+    text-align: center;
+
+}
+
+nav h2{
+     color: white;
+     margin: 0 10px;
+     text-decoration: none;
+     padding: 8px 15px;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card {
+    padding: 20px;
+    background: #f4f4f4;
+    margin: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.card h3 {
+    color: #4CAF50;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* GridView Buttons */
+.GridView a, .btn {
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.GridView a:hover, .btn:hover {
+    background-color: #45a049;
+}
+
+/* Form Styling */
+form {
+    text-align: center;
+}
+
+form h2 {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+button, .auto-style1 input {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover, .auto-style1 input:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
 
     </style>
 </head>
 <body>
-            <header><h1>Personal Finance Management System</h1></header>
+    <header>
+         <div class="header-container">
+             <a href="Dashboard.aspx" class="logo" ><img src="Logo\Logo.png" alt="Logo" class="logo" /></a>
+             <h1>Personal Finance Management System</h1>
+         </div>
+     </header>
+     <nav>
+         <h2>Admin Site</h2>
+     </nav>
 
     <form id="form1" runat="server">
     <h2 class="auto-style1"> User managment<br />
@@ -51,13 +207,12 @@
             </tr>
         </table>
         </h2>
-        <asp:GridView ID="grvshow" runat="server" AutoGenerateSelectButton="True" CssClass="GridView" OnSelectedIndexChanging="grvshow_SelectedIndexChanging">
+       
+                <asp:GridView ID="grvshow" runat="server" AutoGenerateSelectButton="True" CssClass="GridView" OnSelectedIndexChanging="grvshow_SelectedIndexChanging">
 </asp:GridView>
-        <div>
-
-        </div>
     </form>
             <p>
 &nbsp;</p>
+
 </body>
 </html>

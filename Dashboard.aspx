@@ -19,6 +19,37 @@
             text-align: center;
             padding: 10px;
         }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            height : 75px
+        }
+
+        .logout-btn {
+            position: absolute;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: white;
+            color: #333;
+        }
+
 
         nav{
             background: #333;
@@ -71,12 +102,20 @@
     </style>
 </head>
 <body>
-    <header><h1>Personal Finance Management System</h1></header>
+    <header>
+        <div class="header-container">
+            <a href="Dashboard.aspx" class="logo" ><img src="Logo\Logo.png" alt="Logo" class="logo" /></a>
+            <h1>Personal Finance Management System</h1>
+            <a href="LoginPage.aspx" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
     <nav>
         <a href="Dashboard.aspx">Dashboard</a>
         <a href="Transaction.aspx">Transaction</a>
-        <a href="Notification.aspx">Set Notification</a>
+        <%--<a href="Notification.aspx">Set Notification</a>--%>
         <a href="Report.aspx">Report</a>
+        <a href="Budget.aspx">Budget</a>
         <a href="Account.aspx">Account</a>
     </nav>
     <div class="container">
@@ -93,22 +132,6 @@
            <h3>Remaining Budget</h3>
            <p id="paraDisplayBudget" runat="server"></p>
         </div> 
-        <div class="chart-container">
-
-    <h3>Balance & Liabilities</h3>
-    <asp:Chart ID="Chart1" runat="server" Height="205px" Width="705px">
-        <series>
-            <asp:Series Name="Series1" ChartArea="ChartArea1">
-            </asp:Series>
-        </series>
-        <chartareas>
-            <asp:ChartArea Name="ChartArea1">
-            </asp:ChartArea>
-        </chartareas>
-    </asp:Chart>
-    <asp:Chart ID="chartBalance" runat="server" Width="695px">
-    </asp:Chart> 
-</div>
     </div>
     <footer>
            &copy; 2025 Personal Finance Management System

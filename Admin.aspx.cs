@@ -67,35 +67,27 @@ namespace PersonalFinanceManagementSystem
 
         protected void btndele_Click(object sender, EventArgs e)
         {
-
-            //GridViewRow row = grvshow.SelectedRow;
-            //int custId = Convert.ToInt16(row.Cells[1].Text);
-
-            //string query = "delete from tblCustomer where custId=@custId";
-
-            //SqlConnection conn = new SqlConnection(strcon);
-            //SqlCommand cmd = new SqlCommand(@query, conn);
-
-            //cmd.Parameters.AddWithValue("@custId", custId);
-
-            //conn.Open();
-            //cmd.ExecuteNonQuery();
-            //conn.Close();
-
-            //bindgrid();
             GridViewRow row = grvshow.SelectedRow;
 
-                int custId = Convert.ToInt32(row.Cells[1].Text);
-                string query = "DELETE FROM tblCustomer WHERE custId=@custId";
-                using (SqlConnection conn = new SqlConnection(strcon))
-                {
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@custId", custId);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-                bindgrid();
-            
+            int custId = Convert.ToInt32(row.Cells[1].Text);
+            string query1 = "DELETE FROM tblBudget WHERE custId=@custId";
+            string query2 = "DELETE FROM tblTransaction WHERE custId=@custId";
+            string query3 = "DELETE FROM tblCustomer WHERE custId=@custId";
+            SqlConnection conn = new SqlConnection(strcon);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand(query1, conn);
+            cmd = new SqlCommand(query1, conn);
+            cmd.Parameters.AddWithValue("@custId", custId);
+            cmd.ExecuteNonQuery();
+            cmd = new SqlCommand(query2, conn);
+            cmd.Parameters.AddWithValue("@custId", custId);
+            cmd.ExecuteNonQuery();
+            cmd = new SqlCommand(query3, conn);
+            cmd.Parameters.AddWithValue("@custId", custId);
+            cmd.ExecuteNonQuery();
+            clearForm();
+            bindgrid();
         }
 
         protected void btnup_Click(object sender, EventArgs e)
@@ -103,19 +95,28 @@ namespace PersonalFinanceManagementSystem
             GridViewRow row = grvshow.SelectedRow;
 
             int custId = Convert.ToInt32(row.Cells[1].Text);
-                string query = "UPDATE tblCustomer SET custName=@custName, email=@email,password = @password,phNo = @phNo WHERE custId=@custId";
+            string query = "UPDATE tblCustomer SET custName=@custName, email=@email,password = @password,phNo = @phNo WHERE custId=@custId";
             SqlConnection conn = new SqlConnection(strcon);
                 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@custName", txtname.Text);
                     cmd.Parameters.AddWithValue("@email", txtemail.Text);
-            cmd.Parameters.AddWithValue("@password", txtpass.Text);
-            cmd.Parameters.AddWithValue("@phNo", txtphone.Text);
+                    cmd.Parameters.AddWithValue("@password", txtpass.Text);
+                    cmd.Parameters.AddWithValue("@phNo", txtphone.Text);
                     
                     cmd.Parameters.AddWithValue("@custId", custId);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 bindgrid();
+            clearForm();
+        }
+
+        protected void clearForm()
+        {
+            txtname.Text = string.Empty;
+            txtpass.Text = string.Empty;
+            txtemail.Text = string.Empty;
+            txtphone.Text = string.Empty;
         }
     }
 }

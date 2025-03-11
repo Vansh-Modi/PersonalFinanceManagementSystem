@@ -39,7 +39,6 @@ namespace PersonalFinanceManagementSystem
                 {
                     if (Session["custId"] != null)
                     {
-                        Response.Write(userSession);
                         bindType();
                     }
                     else
