@@ -11,7 +11,6 @@ namespace PersonalFinanceManagementSystem
         {
             if (!IsPostBack)
             {
-                //Session["custId"] = 9;
                 if (Session["custId"] != null)
                 {
                     userSession = Convert.ToInt16(Session["custId"]);
@@ -19,7 +18,7 @@ namespace PersonalFinanceManagementSystem
                 }
                 else
                 {
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("LoginPage.aspx");
                 }
             }
         }

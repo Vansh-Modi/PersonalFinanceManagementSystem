@@ -173,8 +173,9 @@
     <nav>
         <a href="Dashboard.aspx">Dashboard</a>
         <a href="Transaction.aspx">Transaction</a>
-        <a href="Notification.aspx">Set Notification</a>
+        <%--<a href="Notification.aspx">Set Notification</a>--%>
         <a href="Report.aspx">Report</a>
+        <a href="Budget.aspx">Budget</a>
         <a href="Account.aspx">Account</a>
     </nav>
         <div class="container">
@@ -221,7 +222,6 @@
         </div>
         <footer>
             &copy; 2025 Finance Management System
-        em
         </footer>
     </form>
 </body>

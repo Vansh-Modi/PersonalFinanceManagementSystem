@@ -5,14 +5,14 @@
 <head runat="server">
     <title>Account</title>
     <style>
-       body{
+       body {
              font-family: Arial, sans-serif;
              margin: 0;
              padding: 0;
              background-color: #f9f9f9;
         }
 
-        header{
+        header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
@@ -29,7 +29,7 @@
         .logo {
             position: absolute;
             left: 20px;
-            height : 75px
+            height: 75px;
         }
 
         .logout-btn {
@@ -49,22 +49,20 @@
             color: #333;
         }
 
-
-        nav{
+        nav {
             background: #333;
             padding: 10px;
             text-align: center;
-
         }
 
-        nav a{
+        nav a {
              color: white;
              margin: 0 10px;
              text-decoration: none;
              padding: 8px 15px;
         }
 
-        nav a:hover{
+        nav a:hover {
             background-color: #4CAF50;
             border-radius: 5px;
         }
@@ -86,7 +84,7 @@
             font-weight: bold;
         }
 
-        input[type="text"], input[type="email"], input[type="password"], button {
+        input[type="text"], input[type="email"], input[type="password"], input[type="txtNumber"], button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -137,14 +135,18 @@
             <asp:TextBox ID="txtUsername" runat="server" Enabled="false" />
 
             <label for="txtEmail">Email:</label>
+            <asp:RequiredFieldValidator ID="rfvUserName" runat="server" ControlToValidate="txtEmail" ErrorMessage="Enter Email" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Enter Correct Email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <asp:TextBox ID="txtEmail" runat="server" />
 
             <label for="txtPassword">Password:</label>
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" />
 
-             <label for="txtNumber">Phone number:</label>
-             <asp:TextBox ID="txtNumber" runat="server" TextMode="Number" />
-            
+            <label for="txtNumber">Phone number:</label>
+            <asp:RequiredFieldValidator ID="rfvNumber" runat="server" ControlToValidate="txtNumber" ErrorMessage="Enter Number" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+            <asp:TextBox ID="txtNumber" runat="server" TextMode="Number" />
+
             <button type="button" runat="server" onserverclick="UpdateAccount_Click">Update Account</button>
             <button type="button" class="delete-btn" runat="server" onserverclick="DeleteAccount_Click">Delete Account</button>
         </div>

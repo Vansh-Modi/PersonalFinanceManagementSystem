@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Report.aspx.cs" Inherits="PersonalFinanceManagementSystem.Report" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,6 +107,7 @@
     </style>
 </head>
 <body>
+    <form id="form1" runat="server">
     <header>
         <div class="header-container">
             <a href="Dashboard.aspx" class="logo" ><img src="Logo\Logo.png" alt="Logo" class="logo" /></a>
@@ -117,12 +119,14 @@
     <nav>
         <a href="Dashboard.aspx">Dashboard</a>
         <a href="Transaction.aspx">Transaction</a>
-        <a href="Notification.aspx">Set Notification</a>
+        <%--<a href="Notification.aspx">Set Notification</a>--%>
         <a href="Report.aspx">Report</a>
+        <a href="Budget.aspx">Budget</a>
         <a href="Account.aspx">Account</a>
     </nav>
     <div class="container">
         <h2>Financial Reports</h2>
+
         <table>
             <thead>
                 <tr>
@@ -133,12 +137,12 @@
                 </tr>
             </thead>
             <tbody id="TransactionTableBody" runat="server">
-                <!-- Rows will be added here dynamically -->
             </tbody>
         </table>
     </div>
     <footer>
         &copy; 2025 Personal Finance Management System
     </footer>
+    </form>
 </body>
 </html>

@@ -6,103 +6,100 @@
 <head runat="server">
     <title>Registration Page</title>
     <style>
-    body{
-         font-family: Arial, sans-serif;
-         margin: 0;
-         padding: 0;
-         background-color: #f9f9f9;
-    }
+        body{
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             background-color: #f9f9f9;
+        }
 
-    header{
-        background-color: #4CAF50;
-        color: white;
-        text-align: center;
-        padding: 10px;
-    }
+        header{
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
 
-    .header-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
 
-    .logo {
-        position: absolute;
-        left: 20px;
-        height : 75px
-    }
+        .logo {
+            position: absolute;
+            left: 20px;
+            height : 75px
+        }
 
-    .logout-btn {
-        position: absolute;
-        right: 20px;
-        background-color: #4CAF50;
-        color: white;
-        text-decoration: none;
-        padding: 8px 15px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: background-color 0.3s, color 0.3s;
-    }
+        .logout-btn {
+            position: absolute;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    .logout-btn:hover {
-        background-color: white;
-        color: #333;
-    }
+        .logout-btn:hover {
+            background-color: white;
+            color: #333;
+        }
 
 
-    nav{
-        background: #333;
-        padding: 10px;
-        text-align: center;
+        nav{
+            background: #333;
+            padding: 10px;
+            text-align: center;
 
-    }
+        }
 
-    nav h2{
-         color: white;
-         margin: 0 10px;
-         text-decoration: none;
-         padding: 8px 15px;
-    }
+        nav h2{
+             color: white;
+             margin: 0 10px;
+             text-decoration: none;
+             padding: 8px 15px;
+        }
 
-    table {
-        margin: 0 auto;
-        border-spacing: 10px;
-        margin-top: 30px;
-        margin-left:10px;
-    }
+        table {
+            margin: 0 auto;
+            border-spacing: 10px;
+            margin-top: 30px;
+            margin-left:10px;
+        }
 
-    td {
-        text-align: center;
-        padding: 5px;
-    }
+        td {
+            text-align: center;
+            padding: 5px;
+        }
 
-    footer {
-        background: #333;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        margin-top: 20px;
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-    }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
 
-    .auto-style2 {
-        width: 473px;
-    }
+        .auto-style2 {
+            width: 473px;
+        }
 
-    .auto-style5 {
-        height: 29px;
-    }
-
+        .auto-style5 {
+            height: 29px;
+        }
 
         .auto-style6 {
             height: 201px;
             margin-left: 130px;
         }
-
-
  </style>
 </head>
 <body>
@@ -133,7 +130,7 @@
                         <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
                     </td><td>
                         <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Enter Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red"></asp:RegularExpressionValidator>
-                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -169,15 +166,10 @@
                         <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
                     </td><td></td>
                 </tr>
-                </table>
-           
-        </div>
-
-        
+                </table>       
     </form>
     <footer>
-                  &copy; 2025 Personal Finance Management System
-
+            &copy; 2025 Personal Finance Management System
     </footer>
 </body>
 </html>

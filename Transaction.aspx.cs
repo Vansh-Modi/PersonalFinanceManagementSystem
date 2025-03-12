@@ -43,7 +43,7 @@ namespace PersonalFinanceManagementSystem
                     }
                     else
                     {
-                        Response.Redirect("Login.aspx");
+                        Response.Redirect("LoginPage.aspx");
                     }
                 }
                 catch (Exception ex)
@@ -70,8 +70,6 @@ namespace PersonalFinanceManagementSystem
             ddlType.DataTextField = "type_name";
             ddlType.DataValueField = "t_Id";
             ddlType.DataBind();
-
-            //conn.Close();
 
             ddlType.Items.Insert(0, new ListItem("--Select Type--", "0"));
         }
@@ -118,7 +116,6 @@ namespace PersonalFinanceManagementSystem
             {
                 userSession = Convert.ToInt16(Session["custId"]);
 
-                // Corrected SQL query with explicit column names
                 string query = "INSERT INTO tblTransaction (custId, category_Id, amount, date, description) " +
                                "VALUES (@custId, @category, @amount, @date, @description)";
                 SqlConnection conn = new SqlConnection(strcon);

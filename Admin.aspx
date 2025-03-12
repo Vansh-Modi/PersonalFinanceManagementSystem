@@ -6,46 +6,42 @@
 <head runat="server">
     <title></title>
     <style>
-          body{
-     font-family: Arial, sans-serif;
-     margin: 0;
-     padding: 0;
-     background-color: #f9f9f9;
+          body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
-header{
+header {
     background-color: #4CAF50;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    left: 20px;
-    height : 75px
-}
-
-nav{
+nav {
     background: #333;
     padding: 10px;
     text-align: center;
-
 }
 
-nav h2{
-     color: white;
-     margin: 0 10px;
-     text-decoration: none;
-     padding: 8px 15px;
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
 }
+
+nav a:hover {
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -160,15 +156,7 @@ footer {
     </style>
 </head>
 <body>
-    <header>
-         <div class="header-container">
-             <a href="Dashboard.aspx" class="logo" ><img src="Logo\Logo.png" alt="Logo" class="logo" /></a>
-             <h1>Personal Finance Management System</h1>
-         </div>
-     </header>
-     <nav>
-         <h2>Admin Site</h2>
-     </nav>
+            <header><h1>Admin</h1></header>
 
     <form id="form1" runat="server">
     <h2 class="auto-style1"> User managment<br />

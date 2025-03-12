@@ -106,7 +106,7 @@
             }
 
             th { 
-                background-color: #007BFF; 
+                background-color: #4CAF50; 
                 color: white; 
 
             }

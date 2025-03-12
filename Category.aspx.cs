@@ -33,8 +33,6 @@ namespace PersonalFinanceManagementSystem
             {
                 try
                 {
-                    Session["custId"] = 8;
-                    Response.Write(Session["custId"]);
                     if (Session["custId"] != null)
                     {
                         userSession = Session["custId"].ToString();
@@ -42,7 +40,7 @@ namespace PersonalFinanceManagementSystem
                     }
                     else
                     {
-                        Response.Redirect("Login.aspx");
+                        Response.Redirect("LoginPage.aspx");
                     }
                 }
                 catch (Exception ex)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonalFinanceManagementSystem;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -17,7 +18,7 @@ namespace PersonalFinanceManagementSystem
         protected void Page_Load(object sender, EventArgs e)
         {
             fnConnection();
-            bindgrid(); 
+            bindgrid();
         }
 
         protected void fnConnection()
@@ -52,7 +53,7 @@ namespace PersonalFinanceManagementSystem
         protected void grvshow_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
             GridViewRow row = grvshow.Rows[e.NewSelectedIndex];
-            
+
             string custName = row.Cells[2].Text;
             string email = row.Cells[3].Text;
             string pass = row.Cells[4].Text;
@@ -97,17 +98,17 @@ namespace PersonalFinanceManagementSystem
             int custId = Convert.ToInt32(row.Cells[1].Text);
             string query = "UPDATE tblCustomer SET custName=@custName, email=@email,password = @password,phNo = @phNo WHERE custId=@custId";
             SqlConnection conn = new SqlConnection(strcon);
-                
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@custName", txtname.Text);
-                    cmd.Parameters.AddWithValue("@email", txtemail.Text);
-                    cmd.Parameters.AddWithValue("@password", txtpass.Text);
-                    cmd.Parameters.AddWithValue("@phNo", txtphone.Text);
-                    
-                    cmd.Parameters.AddWithValue("@custId", custId);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                bindgrid();
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@custName", txtname.Text);
+            cmd.Parameters.AddWithValue("@email", txtemail.Text);
+            cmd.Parameters.AddWithValue("@password", txtpass.Text);
+            cmd.Parameters.AddWithValue("@phNo", txtphone.Text);
+
+            cmd.Parameters.AddWithValue("@custId", custId);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            bindgrid();
             clearForm();
         }
 
@@ -120,4 +121,3 @@ namespace PersonalFinanceManagementSystem
         }
     }
 }
-

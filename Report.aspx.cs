@@ -12,14 +12,7 @@ namespace PersonalFinanceManagementSystem
         {
             if (!IsPostBack)
             {
-                if(Session["custId"] == null)
-                {
-                    Response.Redirect("Login.aspx");
-                }
-                else
-                {
-                    BindTransactionData();
-                }
+                BindTransactionData();
             }
         }
 
